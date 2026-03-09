@@ -216,6 +216,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Head Chef Profile Section -->
+                    <div class="mt-8 flex items-center bg-white p-5 rounded-2xl shadow-md border border-gray-100 gap-5 hover:shadow-lg transition-shadow">
+                        <img src="https://i.postimg.cc/8CSxHYDS/IMG-20260209-WA0060.jpg" alt="Head Chef Khush Mohammad" class="w-24 h-24 rounded-full object-cover shadow-sm border-4 border-light">
+                        <div>
+                            <h5 class="font-bold text-dark text-xl" data-i18n="chef_title">رئيس الطهاة: خوش محمد</h5>
+                            <p class="text-primary font-bold text-sm mb-1" data-i18n="chef_exp">خبرة 30 عاماً</p>
+                            <p class="text-gray-600 text-sm leading-relaxed" data-i18n="chef_desc">يُشرف على تقديم أشهى الأطباق الأصيلة بشغف وإتقان لضمان تجربة لا تُنسى.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -350,17 +360,17 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_name">الاسم</label>
-                                <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                                <input type="text" id="cf-name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_phone">رقم الهاتف</label>
-                                <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                                <input type="tel" id="cf-phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
                             </div>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_event_type">نوع المناسبة</label>
-                                <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-white">
+                                <select id="cf-type" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-white">
                                     <option value="" disabled selected data-i18n="form_select">اختر...</option>
                                     <option value="wedding" data-i18n="form_opt_wedding">زفاف</option>
                                     <option value="corporate" data-i18n="form_opt_corporate">مؤتمر / شركة</option>
@@ -370,20 +380,20 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_guests">عدد الضيوف</label>
-                                <input type="number" min="10" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                                <input type="number" id="cf-guests" min="10" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
                             </div>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_date">تاريخ المناسبة</label>
-                            <input type="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-gray-700">
+                            <input type="date" id="cf-date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-gray-700">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="form_msg">تفاصيل إضافية</label>
-                            <textarea rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"></textarea>
+                            <textarea id="cf-msg" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-primary hover:bg-red-800 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 flex justify-center items-center gap-2">
                             <span data-i18n="form_submit">إرسال الطلب</span>
-                            <i class="fa-solid fa-paper-plane"></i>
+                            <i class="fa-brands fa-whatsapp"></i>
                         </button>
                     </form>
                 </div>
@@ -432,12 +442,16 @@
                             <span data-i18n="contact_address">ضباء - حي المروج - 49315</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-phone mt-1 text-primary"></i>
-                            <span dir="ltr">+966 55 236 0532</span>
+                            <a href="tel:+966552360532" class="flex items-start gap-3 hover:text-primary transition-colors cursor-pointer group">
+                                <i class="fa-solid fa-phone mt-1 text-primary group-hover:text-white transition-colors"></i>
+                                <span dir="ltr">+966 55 236 0532</span>
+                            </a>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-envelope mt-1 text-primary"></i>
-                            <span dir="ltr">alqaysarcatering@gmail.com</span>
+                            <a href="mailto:alqaysarcatering@gmail.com" class="flex items-start gap-3 hover:text-primary transition-colors cursor-pointer group">
+                                <i class="fa-solid fa-envelope mt-1 text-primary group-hover:text-white transition-colors"></i>
+                                <span dir="ltr">alqaysarcatering@gmail.com</span>
+                            </a>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-clock mt-1 text-primary"></i>
@@ -446,9 +460,9 @@
                     </ul>
                 </div>
 
-                <!-- Google Maps Embedded via Search/Plus Code -->
+                <!-- Google Maps Embedded -->
                 <div class="h-48 rounded-lg overflow-hidden relative">
-                    <iframe src="https://maps.google.com/maps?q=9P24%2B53%20Duba&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d182.55457287307786!2d35.705157563291614!3d27.35046416114118!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15ac3119a1d7b65b%3A0xc826915af0351c5f!2z2LTYsdmD2Kkg2YXYt9in2LnZhSDZgtmK2LXYsSDYp9mE2LTZhdin2YQg2KfZhNis2K_ZitivINmE2YTZhdi02YjZitin2Ko!5e1!3m2!1sen!2sus!4v1773079708206!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -483,6 +497,9 @@
                 feat_quality_desc: "مكونات طازجة يومياً",
                 feat_team: "طهاة محترفون",
                 feat_team_desc: "خبرة في المطابخ العالمية",
+                chef_title: "رئيس الطهاة: خوش محمد",
+                chef_exp: "خبرة 30 عاماً",
+                chef_desc: "يُشرف على تقديم أشهى الأطباق الأصيلة بشغف وإتقان لضمان تجربة لا تُنسى.",
                 menu_subtitle: "اكتشف أطباقنا",
                 menu_title: "قائمة الطعام الغنية",
                 menu_desc: "نقدم تشكيلة واسعة من أشهى المأكولات التي ترضي جميع الأذواق. تصفح قائمتنا الرقمية لاكتشاف الأسعار والأطباق اليومية.",
@@ -513,8 +530,8 @@
                 form_guests: "عدد الضيوف",
                 form_date: "تاريخ المناسبة",
                 form_msg: "تفاصيل إضافية",
-                form_submit: "إرسال الطلب",
-                form_success: "تم إرسال طلبك بنجاح! سنتواصل معك قريباً.",
+                form_submit: "إرسال عبر الواتساب",
+                form_success: "تم إعداد الطلب! يتم تحويلك إلى الواتساب...",
                 footer_about: "نقدم أفضل الأطباق الشرق أوسطية، الباكستانية، الأفغانية، الهندية، والعربية. وجهتك الأولى للتذوق الأصيل وخدمات الحفلات.",
                 footer_links: "روابط سريعة",
                 footer_contact: "معلومات التواصل",
@@ -543,6 +560,9 @@
                 feat_quality_desc: "Fresh ingredients daily",
                 feat_team: "Expert Chefs",
                 feat_team_desc: "Experience in global cuisines",
+                chef_title: "Head Chef: Khush Mohammad",
+                chef_exp: "30 Years of Experience",
+                chef_desc: "Overseeing the creation of authentic, delicious dishes with passion and mastery for an unforgettable experience.",
                 menu_subtitle: "Discover Our Dishes",
                 menu_title: "A Rich Culinary Menu",
                 menu_desc: "We offer a wide variety of delicious foods to satisfy all tastes. Browse our digital menu to discover prices and daily specials.",
@@ -573,8 +593,8 @@
                 form_guests: "Number of Guests",
                 form_date: "Event Date",
                 form_msg: "Additional Details",
-                form_submit: "Submit Request",
-                form_success: "Your request has been sent successfully! We will contact you soon.",
+                form_submit: "Send via WhatsApp",
+                form_success: "Request prepared! Redirecting to WhatsApp...",
                 footer_about: "Serving the best Middle Eastern, Pakistani, Afghani, Indian, and Arabic dishes. Your premier destination for authentic taste and catering.",
                 footer_links: "Quick Links",
                 footer_contact: "Contact Info",
@@ -603,6 +623,9 @@
                 feat_quality_desc: "روزانہ تازہ اجزاء",
                 feat_team: "ماہر شیف",
                 feat_team_desc: "عالمی کھانوں کا تجربہ",
+                chef_title: "ہیڈ شیف: خوش محمد",
+                chef_exp: "30 سال کا تجربہ",
+                chef_desc: "جذبے اور مہارت کے ساتھ مستند اور مزیدار پکوانوں کی تیاری کی نگرانی کرتے ہیں تاکہ یادگار تجربہ کو یقینی بنایا جاسکے۔",
                 menu_subtitle: "ہمارے کھانے دریافت کریں",
                 menu_title: "ایک بھرپور مینو",
                 menu_desc: "ہم ہر ذوق کو پورا کرنے کے لیے مختلف قسم کے مزیدار کھانے پیش کرتے ہیں۔ قیمتوں اور روزانہ کی خصوصی ڈشز کے لیے ہمارا ڈیجیٹل مینو براؤز کریں۔",
@@ -633,8 +656,8 @@
                 form_guests: "مہمانوں کی تعداد",
                 form_date: "تقریب کی تاریخ",
                 form_msg: "مزید تفصیلات",
-                form_submit: "درخواست جمع کرائیں",
-                form_success: "آپ کی درخواست کامیابی سے بھیج دی گئی ہے! ہم جلد آپ سے رابطہ کریں گے۔",
+                form_submit: "واٹس ایپ کے ذریعے بھیجیں",
+                form_success: "درخواست تیار ہے! آپ کو واٹس ایپ پر منتقل کیا جا رہا ہے...",
                 footer_about: "بہترین مشرق وسطیٰ، پاکستانی، افغانی، ہندوستانی اور عربی کھانے پیش کرتے ہیں۔ مستند ذائقے اور کیٹرنگ کے لیے آپ کی اولین منزل۔",
                 footer_links: "فوری لنکس",
                 footer_contact: "رابطہ کی معلومات",
@@ -663,6 +686,9 @@
                 feat_quality_desc: "प्रतिदिन ताज़ा सामग्री",
                 feat_team: "विशेषज्ञ शेफ",
                 feat_team_desc: "वैश्विक व्यंजनों का अनुभव",
+                chef_title: "मुख्य रसोइया: खुश मोहम्मद",
+                chef_exp: "30 वर्षों का अनुभव",
+                chef_desc: "जुनून और महारत के साथ प्रामाणिक, स्वादिष्ट व्यंजनों के निर्माण की देखरेख करते हैं।",
                 menu_subtitle: "हमारे व्यंजन खोजें",
                 menu_title: "एक समृद्ध पाक मेनू",
                 menu_desc: "हम सभी स्वादों को संतुष्ट करने के लिए विभिन्न प्रकार के स्वादिष्ट भोजन प्रदान करते हैं। कीमतों और दैनिक विशेष को खोजने के लिए हमारे डिजिटल मेनू ब्राउज़ करें।",
@@ -693,8 +719,8 @@
                 form_guests: "मेहमानों की संख्या",
                 form_date: "आयोजन की तिथि",
                 form_msg: "अतिरिक्त विवरण",
-                form_submit: "अनुरोध सबमिट करें",
-                form_success: "आपका अनुरोध सफलतापूर्वक भेज दिया गया है! हम जल्द ही आपसे संपर्क करेंगे।",
+                form_submit: "व्हाट्सएप के माध्यम से भेजें",
+                form_success: "अनुरोध तैयार है! व्हाट्सएप पर पुनर्निर्देशित किया जा रहा है...",
                 footer_about: "सर्वश्रेष्ठ मध्य पूर्वी, पाकिस्तानी, अफगानी, भारतीय और अरबी व्यंजन परोसना। प्रामाणिक स्वाद और खानपान के लिए आपका प्रमुख गंतव्य।",
                 footer_links: "त्वरित लिंक",
                 footer_contact: "संपर्क जानकारी",
@@ -723,6 +749,9 @@
                 feat_quality_desc: "مواد تازه روزانه",
                 feat_team: "سرآشپزهای ماهر",
                 feat_team_desc: "تجربه در غذاهای جهانی",
+                chef_title: "سرآشپز ارشد: خوش محمد",
+                chef_exp: "۳۰ سال تجربه",
+                chef_desc: "با اشتیاق و مهارت بر تهیه غذاهای اصیل و خوشمزه نظارت می کند تا تجربه ای فراموش نشدنی را رقم بزند.",
                 menu_subtitle: "غذاهای ما را کشف کنید",
                 menu_title: "منوی غنی",
                 menu_desc: "ما انواع غذاهای خوشمزه را ارائه می دهیم.",
@@ -753,8 +782,8 @@
                 form_guests: "تعداد مهمانان",
                 form_date: "تاریخ رویداد",
                 form_msg: "جزئیات اضافی",
-                form_submit: "ارسال درخواست",
-                form_success: "درخواست شما با موفقیت ارسال شد!",
+                form_submit: "ارسال از طریق واتساپ",
+                form_success: "درخواست آماده است! در حال انتقال به واتساپ...",
                 footer_about: "ارائه بهترین غذاهای عربی، افغانی و خاورمیانه ای.",
                 footer_links: "لینک های سریع",
                 footer_contact: "اطلاعات تماس",
@@ -783,6 +812,9 @@
                 feat_quality_desc: "هره ورځ تازه توکي",
                 feat_team: "مسلکي اشپزان",
                 feat_team_desc: "په نړیوالو خواړو کې تجربه",
+                chef_title: "مشر اشپز: خوش محمد",
+                chef_exp: "د ۳۰ کلونو تجربه",
+                chef_desc: "په مینه او مهارت سره د مستند او خوندور خواړو جوړولو څارنه کوي ترڅو د نه هیریدونکي تجربې تضمین وکړي.",
                 menu_subtitle: "زموږ خواړه کشف کړئ",
                 menu_title: "یوه بډایه مینو",
                 menu_desc: "موږ مختلف ډوله خوندور خواړه وړاندې کوو.",
@@ -813,8 +845,8 @@
                 form_guests: "د میلمنو شمیر",
                 form_date: "د پیښې نیټه",
                 form_msg: "اضافي توضیحات",
-                form_submit: "غوښتنه واستوئ",
-                form_success: "ستاسو غوښتنه په بریالیتوب سره لیږل شوې ده!",
+                form_submit: "د واټس اپ له لارې واستوئ",
+                form_success: "غوښتنه چمتو ده! واټس اپ ته لیږل کیږي...",
                 footer_about: "غوره افغاني، عربي او نور خواړه وړاندې کوو.",
                 footer_links: "چټک لینکونه",
                 footer_contact: "د اړیکې معلومات",
@@ -907,24 +939,46 @@
                 observer.observe(el);
             });
 
-            // Handle Catering Form Submission (Simulated)
+            // Handle Catering Form Submission (Redirect to WhatsApp)
             const form = document.getElementById('catering-form');
             const successMsg = document.getElementById('form-success');
             
             form.addEventListener('submit', (e) => {
                 e.preventDefault(); // Prevent page reload
                 
-                // Here you would normally use fetch() to send to a PHP backend
-                // Example: fetch('mailer.php', { method: 'POST', body: new FormData(form) })
+                // Get form values
+                const name = document.getElementById('cf-name').value;
+                const phone = document.getElementById('cf-phone').value;
+                const typeSelect = document.getElementById('cf-type');
+                const type = typeSelect.options[typeSelect.selectedIndex].text;
+                const guests = document.getElementById('cf-guests').value;
+                const date = document.getElementById('cf-date').value;
+                const msg = document.getElementById('cf-msg').value;
 
-                // Simulate success
+                // Format the WhatsApp message
+                const message = `*New Catering Inquiry / طلب حفلات جديد*\n\n` +
+                                `*Name/الاسم:* ${name}\n` +
+                                `*Phone/الهاتف:* ${phone}\n` +
+                                `*Event Type/المناسبة:* ${type}\n` +
+                                `*Guests/الضيوف:* ${guests}\n` +
+                                `*Date/التاريخ:* ${date}\n` +
+                                `*Details/تفاصيل:* ${msg || 'None'}`;
+
+                // Create the WhatsApp URL
+                const waNumber = "966552360532";
+                const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+
+                // Show visual feedback before redirect
                 successMsg.classList.remove('hidden');
-                form.reset();
                 
-                // Hide message after 5 seconds
+                // Open WhatsApp in a new tab
+                window.open(waUrl, '_blank');
+
+                // Reset form and hide message
+                form.reset();
                 setTimeout(() => {
                     successMsg.classList.add('hidden');
-                }, 5000);
+                }, 4000);
             });
 
             // Set Copyright Year
