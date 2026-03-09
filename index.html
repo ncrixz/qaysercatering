@@ -13,7 +13,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Cairo for Arabic/Urdu, Poppins for English/Hindi -->
+    <!-- Cairo for Arabic/Urdu/Farsi/Pashto, Poppins for English/Hindi -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS (via CDN for standalone usage) -->
@@ -34,7 +34,7 @@
                         light: '#fdfbf7',
                     },
                     fontFamily: {
-                        sans: ['Cairo', 'Poppins', 'sans-serif'], // Cairo takes precedence for AR/UR
+                        sans: ['Cairo', 'Poppins', 'sans-serif'], // Cairo takes precedence for RTL
                     }
                 }
             }
@@ -114,6 +114,8 @@
                             <button onclick="switchLanguage('en')" class="block w-full text-start px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-sans">English (EN)</button>
                             <button onclick="switchLanguage('ur')" class="block w-full text-start px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-sans">اردو (UR)</button>
                             <button onclick="switchLanguage('hi')" class="block w-full text-start px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-sans">हिन्दी (HI)</button>
+                            <button onclick="switchLanguage('fa')" class="block w-full text-start px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-sans">فارسی (FA)</button>
+                            <button onclick="switchLanguage('ps')" class="block w-full text-start px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-sans">پښتو (PS)</button>
                         </div>
                     </div>
                 </div>
@@ -126,6 +128,8 @@
                         <option value="en">EN</option>
                         <option value="ur">UR</option>
                         <option value="hi">HI</option>
+                        <option value="fa">FA</option>
+                        <option value="ps">PS</option>
                     </select>
 
                     <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary focus:outline-none">
@@ -228,8 +232,12 @@
                 </p>
             </div>
 
-            <!-- Cuisine Highlights -->
+            <!-- Cuisine Highlights (Afghani First) -->
             <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mb-16 fade-in-up delay-200">
+                <div class="p-6 rounded-2xl bg-light hover:shadow-lg transition-shadow border border-gray-100 text-center group">
+                    <i class="fa-solid fa-fire-burner text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-gray-800" data-i18n="cuisine_af">أفغاني</h3>
+                </div>
                 <div class="p-6 rounded-2xl bg-light hover:shadow-lg transition-shadow border border-gray-100 text-center group">
                     <i class="fa-solid fa-bowl-food text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
                     <h3 class="font-bold text-gray-800" data-i18n="cuisine_me">شرق أوسطي</h3>
@@ -237,10 +245,6 @@
                 <div class="p-6 rounded-2xl bg-light hover:shadow-lg transition-shadow border border-gray-100 text-center group">
                     <i class="fa-solid fa-pepper-hot text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
                     <h3 class="font-bold text-gray-800" data-i18n="cuisine_pk">باكستاني</h3>
-                </div>
-                <div class="p-6 rounded-2xl bg-light hover:shadow-lg transition-shadow border border-gray-100 text-center group">
-                    <i class="fa-solid fa-fire-burner text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-bold text-gray-800" data-i18n="cuisine_af">أفغاني</h3>
                 </div>
                 <div class="p-6 rounded-2xl bg-light hover:shadow-lg transition-shadow border border-gray-100 text-center group">
                     <i class="fa-solid fa-leaf text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
@@ -425,26 +429,26 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
-                            <span data-i18n="contact_address">الشارع الرئيسي، المدينة، البلد</span>
+                            <span data-i18n="contact_address">ضباء - حي المروج - 49315</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-phone mt-1 text-primary"></i>
-                            <span dir="ltr">+966 50 123 4567</span>
+                            <span dir="ltr">+966 55 236 0532</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-envelope mt-1 text-primary"></i>
-                            <span dir="ltr">info@alqaysarcatering.com</span>
+                            <span dir="ltr">alqaysarcatering@gmail.com</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-clock mt-1 text-primary"></i>
-                            <span data-i18n="contact_hours">يومياً: 11 صباحاً - 12 منتصف الليل</span>
+                            <span data-i18n="contact_hours">مفتوح 24 ساعة يومياً</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Google Maps (Placeholder, replace src with actual embed) -->
+                <!-- Google Maps Embedded via Search/Plus Code -->
                 <div class="h-48 rounded-lg overflow-hidden relative">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115891.75888206584!2d46.75782785!3d24.8090595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efdccbb8fbbbd%3A0x67d8f36c5df53549!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1680000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=9P24%2B53%20Duba&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -514,8 +518,8 @@
                 footer_about: "نقدم أفضل الأطباق الشرق أوسطية، الباكستانية، الأفغانية، الهندية، والعربية. وجهتك الأولى للتذوق الأصيل وخدمات الحفلات.",
                 footer_links: "روابط سريعة",
                 footer_contact: "معلومات التواصل",
-                contact_address: "الشارع الرئيسي، المدينة، البلد",
-                contact_hours: "يومياً: 11 صباحاً - 12 منتصف الليل",
+                contact_address: "ضباء - حي المروج - 49315",
+                contact_hours: "مفتوح 24 ساعة يومياً",
                 footer_copyright: "القيصر للضيافة والمطاعم. جميع الحقوق محفوظة."
             },
             en: {
@@ -574,8 +578,8 @@
                 footer_about: "Serving the best Middle Eastern, Pakistani, Afghani, Indian, and Arabic dishes. Your premier destination for authentic taste and catering.",
                 footer_links: "Quick Links",
                 footer_contact: "Contact Info",
-                contact_address: "Main Street, City, Country",
-                contact_hours: "Daily: 11 AM - 12 Midnight",
+                contact_address: "Duba - Al Morooj District - 49315",
+                contact_hours: "Open 24 hrs Daily",
                 footer_copyright: "Al Qaysar Catering. All rights reserved."
             },
             ur: {
@@ -634,8 +638,8 @@
                 footer_about: "بہترین مشرق وسطیٰ، پاکستانی، افغانی، ہندوستانی اور عربی کھانے پیش کرتے ہیں۔ مستند ذائقے اور کیٹرنگ کے لیے آپ کی اولین منزل۔",
                 footer_links: "فوری لنکس",
                 footer_contact: "رابطہ کی معلومات",
-                contact_address: "مین سٹریٹ، شہر، ملک",
-                contact_hours: "روزانہ: صبح 11 - رات 12",
+                contact_address: "ضبا - المروج ڈسٹرکٹ - 49315",
+                contact_hours: "روزانہ 24 گھنٹے کھلا رہتا ہے",
                 footer_copyright: "قیصر کیٹرنگ۔ جملہ حقوق محفوظ ہیں۔"
             },
             hi: {
@@ -694,17 +698,137 @@
                 footer_about: "सर्वश्रेष्ठ मध्य पूर्वी, पाकिस्तानी, अफगानी, भारतीय और अरबी व्यंजन परोसना। प्रामाणिक स्वाद और खानपान के लिए आपका प्रमुख गंतव्य।",
                 footer_links: "त्वरित लिंक",
                 footer_contact: "संपर्क जानकारी",
-                contact_address: "मुख्य सड़क, शहर, देश",
-                contact_hours: "दैनिक: सुबह 11 - रात 12 बजे",
+                contact_address: "दुबा - अल मरूज जिला - 49315",
+                contact_hours: "प्रतिदिन 24 घंटे खुला",
                 footer_copyright: "अल क़ैसर कैटरिंग। सर्वाधिकार सुरक्षित।"
+            },
+            fa: {
+                brand_name: "القیصر",
+                brand_full: "القیصر کیترینگ و رستوران‌ها",
+                tagline: "\"طعم دنیا را بچشید، هر بار یک طعم\"",
+                nav_home: "خانه",
+                nav_about: "درباره ما",
+                nav_menu: "منو",
+                nav_gallery: "گالری",
+                nav_catering: "کیترینگ",
+                nav_contact: "تماس",
+                hero_welcome: "خوش آمدید به",
+                btn_order: "سفارش دهید",
+                btn_catering: "رزرو کیترینگ",
+                about_subtitle: "داستان ما",
+                about_title: "سفر طعم‌های ما را کشف کنید",
+                about_p1: "رستوران القیصر برای ارائه یک تجربه استثنایی غذایی تاسیس شد.",
+                about_p2: "ماموریت ما جلب رضایت شماست.",
+                feat_quality: "کیفیت عالی",
+                feat_quality_desc: "مواد تازه روزانه",
+                feat_team: "سرآشپزهای ماهر",
+                feat_team_desc: "تجربه در غذاهای جهانی",
+                menu_subtitle: "غذاهای ما را کشف کنید",
+                menu_title: "منوی غنی",
+                menu_desc: "ما انواع غذاهای خوشمزه را ارائه می دهیم.",
+                cuisine_me: "خاورمیانه ای",
+                cuisine_pk: "پاکستانی",
+                cuisine_af: "افغانی",
+                cuisine_in: "هندی",
+                cuisine_ar: "عربی",
+                menu_cta_title: "مشاهده منوی کامل و سفارش",
+                btn_view_menu: "مشاهده منوی دیجیتال",
+                gallery_subtitle: "فضا و غذا",
+                gallery_title: "گالری تصاویر",
+                catering_subtitle: "خدمات کیترینگ",
+                catering_title: "رویدادهای شما را فراموش نشدنی می کنیم",
+                catering_desc: "ما خدمات کیترینگ جامعی را ارائه می دهیم.",
+                catering_li1: "منوهای سفارشی",
+                catering_li2: "کادر خدماتی حرفه ای",
+                catering_li3: "راه اندازی کامل در محل",
+                form_title: "درخواست قیمت کیترینگ",
+                form_name: "نام کامل",
+                form_phone: "شماره تلفن",
+                form_event_type: "نوع رویداد",
+                form_select: "انتخاب کنید...",
+                form_opt_wedding: "عروسی",
+                form_opt_corporate: "شرکتی",
+                form_opt_family: "دورهمی خانوادگی",
+                form_opt_other: "سایر",
+                form_guests: "تعداد مهمانان",
+                form_date: "تاریخ رویداد",
+                form_msg: "جزئیات اضافی",
+                form_submit: "ارسال درخواست",
+                form_success: "درخواست شما با موفقیت ارسال شد!",
+                footer_about: "ارائه بهترین غذاهای عربی، افغانی و خاورمیانه ای.",
+                footer_links: "لینک های سریع",
+                footer_contact: "اطلاعات تماس",
+                contact_address: "ضبا - محله المروج - 49315",
+                contact_hours: "روزانه 24 ساعت باز است",
+                footer_copyright: "القیصر کیترینگ. تمامی حقوق محفوظ است."
+            },
+            ps: {
+                brand_name: "القیصر",
+                brand_full: "القیصر کیټرنګ او رستورانتونه",
+                tagline: "\"د نړۍ خوندونه وڅکئ\"",
+                nav_home: "کور پاڼه",
+                nav_about: "زموږ په اړه",
+                nav_menu: "مینو",
+                nav_gallery: "ګالري",
+                nav_catering: "کیټرنګ",
+                nav_contact: "اړیکه",
+                hero_welcome: "ښه راغلاست",
+                btn_order: "اوس فرمایش ورکړئ",
+                btn_catering: "کیټرنګ بک کړئ",
+                about_subtitle: "زموږ کیسه",
+                about_title: "زموږ د خوندونو سفر کشف کړئ",
+                about_p1: "القیصر رستورانت د غوره خواړو تجربې وړاندې کولو لپاره جوړ شوی.",
+                about_p2: "زموږ دنده ستاسو د خوندونو پوره کول دي.",
+                feat_quality: "لوړ کیفیت",
+                feat_quality_desc: "هره ورځ تازه توکي",
+                feat_team: "مسلکي اشپزان",
+                feat_team_desc: "په نړیوالو خواړو کې تجربه",
+                menu_subtitle: "زموږ خواړه کشف کړئ",
+                menu_title: "یوه بډایه مینو",
+                menu_desc: "موږ مختلف ډوله خوندور خواړه وړاندې کوو.",
+                cuisine_me: "منځنی ختیځ",
+                cuisine_pk: "پاکستانی",
+                cuisine_af: "افغانی",
+                cuisine_in: "هندی",
+                cuisine_ar: "عربی",
+                menu_cta_title: "بشپړ مینو وګورئ او فرمایش ورکړئ",
+                btn_view_menu: "ډیجیټل مینو وګورئ",
+                gallery_subtitle: "چاپیریال او خواړه",
+                gallery_title: "د انځورونو ګالري",
+                catering_subtitle: "د کیټرنګ خدمتونه",
+                catering_title: "ستاسو پیښې نه هیریدونکې کوو",
+                catering_desc: "موږ د کیټرنګ بشپړ خدمتونه وړاندې کوو.",
+                catering_li1: "دودیز شوي مینوګانې",
+                catering_li2: "مسلکي خدمتي کارکوونکي",
+                catering_li3: "په ساحه کې بشپړ تنظیم",
+                form_title: "د کیټرنګ نرخ غوښتنه",
+                form_name: "بشپړ نوم",
+                form_phone: "د تلیفون شمیره",
+                form_event_type: "د پیښې ډول",
+                form_select: "وټاکئ...",
+                form_opt_wedding: "واده",
+                form_opt_corporate: "رسمي",
+                form_opt_family: "کورنۍ غونډه",
+                form_opt_other: "نور",
+                form_guests: "د میلمنو شمیر",
+                form_date: "د پیښې نیټه",
+                form_msg: "اضافي توضیحات",
+                form_submit: "غوښتنه واستوئ",
+                form_success: "ستاسو غوښتنه په بریالیتوب سره لیږل شوې ده!",
+                footer_about: "غوره افغاني، عربي او نور خواړه وړاندې کوو.",
+                footer_links: "چټک لینکونه",
+                footer_contact: "د اړیکې معلومات",
+                contact_address: "ضبا - المروج سیمه - 49315",
+                contact_hours: "هره ورځ 24 ساعته خلاص وي",
+                footer_copyright: "القیصر کیټرنګ. ټول حقونه خوندي دي."
             }
         };
 
         // 2. Language Switcher Logic
-        const langMap = { ar: 'العربية', en: 'English', ur: 'اردو', hi: 'हिन्दी' };
+        const langMap = { ar: 'العربية', en: 'English', ur: 'اردو', hi: 'हिन्दी', fa: 'فارسی', ps: 'پښتو' };
         
         function switchLanguage(lang) {
-            const isRTL = lang === 'ar' || lang === 'ur';
+            const isRTL = lang === 'ar' || lang === 'ur' || lang === 'fa' || lang === 'ps';
             
             // Set HTML attributes
             document.documentElement.lang = lang;
